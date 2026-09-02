@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Actividad DAM</string>
+    <string name="my_tasks">My Tasks</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="today">TODAY</string>
+    <string name="today_chip">Today</string>
+    <string name="upcoming">UPCOMING</string>
+    <string name="upcoming_chip">Upcoming</string>
+    <string name="task_review_product_design">Review product design specs</string>
+    <string name="task_prepare_slides">Prepare slides for sync meeting</string>
+    <string name="task_review_pull_requests">Review pull requests</string>
+    <string name="task_update_doc_guidelines">Update documentation guidelines</string>
+    <string name="task_schedule_quarterly_feedback">Schedule quarterly feedback loops</string>
+    <string name="drag_handle_desc">Drag handle</string>
+    <string name="add_task_desc">Add task</string>
+</resources>
