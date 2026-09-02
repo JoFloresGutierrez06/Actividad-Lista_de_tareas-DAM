@@ -1,5 +1,9 @@
 package com.example.actividaddam
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -20,6 +24,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.actividaddam.ui.theme.ActividadDAMTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +34,7 @@ class MainActivity : ComponentActivity() {
             ActividadDAMTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     MyTasksScreen()
                 }
@@ -93,9 +98,8 @@ fun MyTasksScreen() {
 
             // ---- Row de filtros (chips) ----
             FilterChipsRow(
-                selected = selectedFilter,
-                onSelect = { selectedFilter = it }
-            )
+                selected = selectedFilter
+            ) { selectedFilter = it }
 
             // ---- Lista de tareas agrupada por sección ----
             LazyColumn(
@@ -234,7 +238,7 @@ private fun SectionLabel(text: String) {
 
 // ---------- FILA DE TAREA ----------
 // Row horizontal: Checkbox | Column (texto) ocupando el espacio restante | drag handle.
-// Todo envuelto en un Box con fondo blanco y esquinas redondeadas simulando la tarjeta.
+// Contenido envuelto en un Box con fondo blanco y esquinas redondeadas simulando la tarjeta.
 
 @Composable
 private fun TaskRow(
