@@ -1,5 +1,9 @@
-package com.example.mytasks
+package com.example.actividaddam
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -23,6 +27,25 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.actividaddam.ui.theme.ActividadDAMTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            ActividadDAMTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    //MyTasksScreen()
+                    MyTasksApp()
+                }
+            }
+        }
+    }
+}
 
 
 data class Task(
@@ -257,7 +280,6 @@ private fun HeaderSection(
         }
     }
 }
-
 
 @Composable
 private fun FilterChipsRow(
